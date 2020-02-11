@@ -18,7 +18,7 @@ public class LandingScreen {
     private final UIElement addRecipesText = E(byAndroidUIAutomator("textContains(\"Add a recipe\")"));
     private final UIElement moreOptions = E(byId("More options"));
     private final UIElement clickShoppingList = E(byAndroidUIAutomator("textContains(\"First List\")"));
-
+    UIElement element;
 
 
 
@@ -52,7 +52,7 @@ public class LandingScreen {
     }
 
     public void checkNewList(String arg) {
-        UIElement element = E(byAndroidUIAutomator("textContains(\"" + arg + "\")"));
+        element = E(byAndroidUIAutomator("textContains(\"" + arg + "\")"));
         element.waitFor(5).untilIsVisible();
     }
 
@@ -62,7 +62,7 @@ public class LandingScreen {
     }
 
     public void checkDeletedList(String arg) {
-        UIElement element = E(byAndroidUIAutomator("textContains(\"" + arg + "\")"));
+        element = E(byAndroidUIAutomator("textContains(\"" + arg + "\")"));
         element.waitFor(5).untilNotVisible();
     }
 }
